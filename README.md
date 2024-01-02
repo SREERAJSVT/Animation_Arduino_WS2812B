@@ -1,4 +1,72 @@
+Continuing from where we left off:
 
+```cpp
+void setPixelHeatColor(int Pixel, byte temperature)
+{
+  // Function to set the color of a pixel based on "heat" (temperature)
+  // Rescales heat from 0-255 to 0-191
+  byte t192 = round((temperature / 255.0) * 191);
+
+  // Calculate ramp up from
+  byte heatramp = t192 & 0x3F; // 0...63
+  heatramp <<= 2;               // scale up to 0...252
+
+  // Determine color based on the temperature
+  if (t192 > 0x80)              // hottest
+  {
+    leds[Pixel].setRGB(255, 255, heatramp);
+  }
+  else if (t192 > 0x40)         // middle
+  {
+    leds[Pixel].setRGB(255, heatramp, 0);
+  }
+  else                          // coolest
+  {
+    leds[Pixel].setRGB(heatramp, 0, 0);
+  }
+}
+
+void runNoAnimation()
+{
+  // Function to handle the case of no animation
+  // Wait for a while before starting the first animation
+  if (millis() - animationStartTime >= 500)
+  {
+    FastLED.clear(); // Clear the LED strip
+    currentState = FIRE_EFFECT;
+    animationStartTime = millis();
+  }
+}
+
+void runFireEffect()
+{
+  // Function to run the fire effect animation
+  // Code for fire effect...
+}
+
+void runBouncingBalls()
+{
+  // Function to run the bouncing balls animation
+  // Code for bouncing balls effect...
+}
+```
+
+- **Pixel Heat Color Function:**
+  - `void setPixelHeatColor(int Pixel, byte temperature)` sets the color of a pixel based on a simulated "heat" value.
+
+- **No Animation Function:**
+  - `void runNoAnimation()` handles the case of no animation.
+  - It waits for a while before starting the first animation.
+
+- **Fire Effect Function:**
+  - `void runFireEffect()` contains the code to run the fire effect animation.
+
+- **Bouncing Balls Function:**
+  - `void runBouncingBalls()` contains the code to run the bouncing balls animation.
+
+The fire effect and bouncing balls functions are not provided in the initial snippet but should be implemented based on your specific requirements.
+
+In summary, the code is designed to switch between different LED animations: no animation, fire effect, and bouncing balls. The `switch` statement in the `loop()` function controls the flow between these animations based on the current state. The fire effect runs for 5 seconds, followed by the bouncing balls animation. The code structure is modular, making it easy to understand and modify each animation independently.
 ```markdown
 # Arduino LED Animation
 
