@@ -1,4 +1,4 @@
-Certainly! Let's go through the provided Arduino code line by line, explaining each section:
+Let's go through the provided Arduino code line by line, explaining each section:
 
 ```cpp
 #include "FastLED.h"
