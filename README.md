@@ -47,7 +47,6 @@ If you'd like to contribute to this project, please fork the repository and crea
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
@@ -55,4 +54,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ```
 
-Make sure to replace placeholders like `yourusername` and update the license information in the `LICENSE.md` file if needed. Additionally, provide any relevant acknowledgments or credits in the Acknowledgments section.
+Make sure to replace placeholders like `SREERAJ` and update the license information in the `LICENSE.md` file if needed. Additionally, provide any relevant acknowledgments or credits in the Acknowledgments section.
